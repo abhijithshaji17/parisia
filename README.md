@@ -18,7 +18,7 @@ Imagine getting off the plane, feeling like the literal **main character**, and 
 
 ---
 
-## We’re Built Different :)
+## We’re built different :)
 
 * **✨ Buttery Smooth Scroll Scrubbing**: 300 cinematic frames powered by HTML5 Canvas & custom lerp interpolation. It's giving *Apple product reveal* vibes.
 * **✈️ Preloader Flight Sequence**: Instant loader progress bar so you never get cooked waiting for images.
@@ -28,7 +28,7 @@ Imagine getting off the plane, feeling like the literal **main character**, and 
 
 ---
 
-## How the Magic Happens ....
+## How the magic happens ....
 | Tech | What it Does | The Vibe |
 | :--- | :--- | :--- |
 | **HTML5 Canvas** | High-performance frame rendering | *Render engine go brrr* 🎨 |
