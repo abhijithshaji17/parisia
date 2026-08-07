@@ -36,7 +36,7 @@ Imagine getting off the plane, feeling like the literal **main character**, and 
 | **CSS3** | Glassmorphism & Fixed Canvas Wrappers | *Aesthetic overload* 🌌 |
 | **Google Fonts (Outfit)** | Modern clean typography | *Typography that hits* ✍️ |
 
-
+---
 
 ## Community & DMs
 Got ideas? Found a bug? Want to drop some aesthetic feedback?
