@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+/* Custom scrollbars and transitions if needed */
+* {
+  font-family: 'DM Sans', sans-serif !important;
+}
