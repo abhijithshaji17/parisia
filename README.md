@@ -36,33 +36,13 @@ Imagine getting off the plane, feeling like the literal **main character**, and 
 | **CSS3** | Glassmorphism & Fixed Canvas Wrappers | *Aesthetic overload* 🌌 |
 | **Google Fonts (Outfit)** | Modern clean typography | *Typography that hits* ✍️ |
 
----
 
-## 🍵 Spilling the Tea (FAQ)
-
-<details>
-<summary><b>Q: Is this real or am I delusional?</b></summary>
-A: You’re not delulu, bestie. The 300-frame scroll animation is 100% real and running right on your browser canvas.
-</details>
-<br>
-<details>
-<summary><b>Q: Why non-stop scrolling animation?</b></summary>
-A: Because static images are out, dynamic interactive storytelling is in. Scrolling = immediate dopamine hit.
-</details>
-<br>
-<details>
-<summary><b>Q: Can I customize the frames?</b></summary>
-
-A: Absolutely. Drop your image sequence into `./ezgif-861934f1fd27dda8-jpg/` (or update `currentFrame()` in `app.js`), set your `frameCount`, and boom — instant custom scroll experience.
-</details>
-<br>
 
 ## Community & DMs
-
 Got ideas? Found a bug? Want to drop some aesthetic feedback?
 
 * 🐙 **GitHub Issues**: Open a ticket if something breaks.
-* ⭐️ **Star this repo**: Give us a star if Parisia gave you main character vibes!
+* ⭐️ **Star this repo**: Give us a star if Parisia matched your vibe !
 
 ---
 
