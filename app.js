@@ -2,14 +2,14 @@ const canvas = document.getElementById("scrub-canvas");
 const context = canvas.getContext("2d");
 
 const frameCount = 300;
-const images = [];
+const images = new Array(frameCount).fill(null);
 let loadedCount = 0;
+let loaderDismissed = false;
 
 // Setup image preloading path helper
 const currentFrame = index => {
-    // Files are named ezgif-frame-001.jpg to ezgif-frame-300.jpg
     const paddedIndex = String(index).padStart(3, '0');
-    return `./ezgif-861934f1fd27dda8-jpg/ezgif-frame-${paddedIndex}.jpg`;
+    return `./assets_img/ezgif-frame-${paddedIndex}.jpg`;
 };
 
 // UI Elements for loader
@@ -26,8 +26,25 @@ function resizeCanvas() {
 
 function renderFrame(index) {
     const imgIndex = Math.max(1, Math.min(frameCount, index));
-    const img = images[imgIndex - 1];
-    if (!img || !img.complete) return;
+    let img = images[imgIndex - 1];
+
+    // If target image is not loaded yet, find nearest loaded frame
+    if (!img || !img.complete || img.naturalWidth === 0) {
+        for (let offset = 1; offset < frameCount; offset++) {
+            const prev = images[imgIndex - 1 - offset];
+            if (prev && prev.complete && prev.naturalWidth > 0) {
+                img = prev;
+                break;
+            }
+            const next = images[imgIndex - 1 + offset];
+            if (next && next.complete && next.naturalWidth > 0) {
+                img = next;
+                break;
+            }
+        }
+    }
+
+    if (!img || !img.complete || img.naturalWidth === 0) return;
 
     // Calculate aspect ratio covering
     const canvasRatio = canvas.width / canvas.height;
@@ -54,7 +71,7 @@ function renderFrame(index) {
 const smoothScroll = {
     targetFrame: 1,
     currentFrame: 1,
-    ease: 0.08 // Lower means smoother/slower catch up
+    ease: 0.08
 };
 
 function updateScroll() {
@@ -70,11 +87,9 @@ function updateScroll() {
 }
 
 function animate() {
-    // Interpolate towards target frame
     const diff = smoothScroll.targetFrame - smoothScroll.currentFrame;
     smoothScroll.currentFrame += diff * smoothScroll.ease;
 
-    // Only render if there is a visible change
     if (Math.abs(diff) > 0.01) {
         renderFrame(Math.round(smoothScroll.currentFrame));
     }
@@ -82,31 +97,59 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Preload all frames
-function preloadImages() {
-    for (let i = 1; i <= frameCount; i++) {
-        const img = new Image();
-        img.onload = () => {
-            loadedCount++;
-            const percent = Math.round((loadedCount / frameCount) * 100);
-            progressBar.style.width = `${percent}%`;
-            progressText.innerText = `${percent}% loaded`;
+function dismissLoader() {
+    if (loaderDismissed || !loader) return;
+    loaderDismissed = true;
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 600);
+}
 
-            if (loadedCount === frameCount) {
-                // Initialize canvas & hide loader
-                setTimeout(() => {
-                    loader.style.opacity = 0;
-                    loader.style.visibility = "hidden";
-                    
-                    // Trigger initial size and drawing
-                    resizeCanvas();
-                    // Start rendering loop
-                    requestAnimationFrame(animate);
-                }, 400); // Small delay to let final transitions feel clean
+// Progressive image preloader
+function preloadImages() {
+    // Load frame 1 immediately so user sees content instantly
+    const firstImg = new Image();
+    firstImg.onload = () => {
+        images[0] = firstImg;
+        loadedCount++;
+        resizeCanvas();
+        requestAnimationFrame(animate);
+
+        // Dismiss loader early so user doesn't wait on all 300 frames
+        setTimeout(dismissLoader, 300);
+
+        // Load remaining frames in background
+        loadRemainingFrames();
+    };
+    firstImg.onerror = () => {
+        dismissLoader();
+        loadRemainingFrames();
+    };
+    firstImg.src = currentFrame(1);
+}
+
+function loadRemainingFrames() {
+    for (let i = 2; i <= frameCount; i++) {
+        const img = new Image();
+        const handleLoad = () => {
+            loadedCount++;
+            images[i - 1] = img;
+            const percent = Math.round((loadedCount / frameCount) * 100);
+            if (progressBar) progressBar.style.width = `${percent}%`;
+            if (progressText) progressText.innerText = `${percent}% loaded`;
+
+            // Auto-dismiss loader if it hasn't dismissed yet
+            if (loadedCount >= 10 && !loaderDismissed) {
+                dismissLoader();
             }
+
+            renderFrame(Math.round(smoothScroll.currentFrame));
         };
+        img.onload = handleLoad;
+        img.onerror = handleLoad;
         img.src = currentFrame(i);
-        images.push(img);
     }
 }
 
