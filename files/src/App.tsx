@@ -747,7 +747,7 @@ export default function App() {
               {/* Top Quote Block */}
               <div className="relative z-10 mb-8 sm:mb-12">
                 <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white leading-snug uppercase font-['DM_Sans',sans-serif]">
-                  " PARISIA CURATED AN UNPARALLELED BESPOKE JOURNEY FOR OUR ESCAPE. FROM PRIVATE LOUVRE ACCESS TO COVETED DINING RESERVATIONS, EVERY MOMENT WAS EXQUISITE "
+                  " . PARISIA CURATED AN UNPARALLELED BESPOKE JOURNEY FOR OUR ESCAPE. FROM PRIVATE LOUVRE ACCESS TO COVETED DINING RESERVATIONS, EVERY MOMENT WAS EXQUISITE "
                 </blockquote>
               </div>
 
