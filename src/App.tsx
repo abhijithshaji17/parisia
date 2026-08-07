@@ -108,30 +108,51 @@ export default function App() {
   // Preload scroll animation images
   useEffect(() => {
     const frameCount = 300;
-    const loadedImages: HTMLImageElement[] = [];
+    const loadedImages: HTMLImageElement[] = new Array(frameCount).fill(null as unknown as HTMLImageElement);
     let loadedCount = 0;
+    let dismissed = false;
 
     const currentFrame = (index: number) => {
       const paddedIndex = String(index).padStart(3, '0');
       return `/ezgif-861934f1fd27dda8-jpg/ezgif-frame-${paddedIndex}.jpg`;
     };
 
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      img.onload = () => {
-        loadedCount++;
-        const percent = Math.round((loadedCount / frameCount) * 100);
-        setProgress(percent);
-        if (loadedCount === frameCount) {
-          // Add a small delay to make the transition smoother
-          setTimeout(() => {
-            setIsLoaded(true);
-          }, 300);
-        }
-      };
-      img.src = currentFrame(i);
-      loadedImages.push(img);
-    }
+    const dismissPreloader = () => {
+      if (dismissed) return;
+      dismissed = true;
+      setIsLoaded(true);
+    };
+
+    // Load Frame 1 FIRST so UI renders immediately
+    const firstImg = new Image();
+    firstImg.onload = () => {
+      loadedImages[0] = firstImg;
+      loadedCount++;
+      setProgress(1);
+      setTimeout(dismissPreloader, 200);
+
+      // Load remaining frames in background
+      for (let i = 2; i <= frameCount; i++) {
+        const img = new Image();
+        const handleLoad = () => {
+          loadedCount++;
+          loadedImages[i - 1] = img;
+          const percent = Math.round((loadedCount / frameCount) * 100);
+          setProgress(percent);
+          if (loadedCount >= 10 && !dismissed) {
+            dismissPreloader();
+          }
+        };
+        img.onload = handleLoad;
+        img.onerror = handleLoad;
+        img.src = currentFrame(i);
+      }
+    };
+    firstImg.onerror = () => {
+      dismissPreloader();
+    };
+    firstImg.src = currentFrame(1);
+
     imagesRef.current = loadedImages;
   }, []);
 
@@ -161,8 +182,25 @@ export default function App() {
       if (!canvas || !context || images.length === 0) return;
 
       const imgIndex = Math.max(1, Math.min(300, index));
-      const img = images[imgIndex - 1];
-      if (!img || !img.complete) return;
+      let img = images[imgIndex - 1];
+
+      // Fallback to nearest loaded image if current frame is not ready
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        for (let offset = 1; offset < 300; offset++) {
+          const prev = images[imgIndex - 1 - offset];
+          if (prev && prev.complete && prev.naturalWidth > 0) {
+            img = prev;
+            break;
+          }
+          const next = images[imgIndex - 1 + offset];
+          if (next && next.complete && next.naturalWidth > 0) {
+            img = next;
+            break;
+          }
+        }
+      }
+
+      if (!img || !img.complete || img.naturalWidth === 0) return;
 
       // High quality smoothing to remove pixelation
       context.imageSmoothingEnabled = true;
@@ -709,7 +747,7 @@ export default function App() {
               {/* Top Quote Block */}
               <div className="relative z-10 mb-8 sm:mb-12">
                 <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white leading-snug uppercase font-['DM_Sans',sans-serif]">
-                  «PARISIA CURATED AN UNPARALLELED BESPOKE JOURNEY FOR OUR ESCAPE. FROM PRIVATE LOUVRE ACCESS TO COVETED DINING RESERVATIONS, EVERY MOMENT WAS EXQUISITE»
+                  " PARISIA CURATED AN UNPARALLELED BESPOKE JOURNEY FOR OUR ESCAPE. FROM PRIVATE LOUVRE ACCESS TO COVETED DINING RESERVATIONS, EVERY MOMENT WAS EXQUISITE "
                 </blockquote>
               </div>
 
