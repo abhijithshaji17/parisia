@@ -2,10 +2,10 @@
 
 > **"It’s giving main character energy in Paris, no cap."** 💅✈️
 
-![Vibe Check](https://img.shields.io/badge/Vibe%20Check-PASSED%20💯-ff69b4?style=for-the-badge)
-![Aesthetic](https://img.shields.io/badge/Aesthetic-100%25%20Pure%20Glam%20🥰-purple?style=for-the-badge)
-![Tech](https://img.shields.io/badge/Frame--Scrubbing-Canvas%20Magic%20🪄-black?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Serving%20Looks%20🪞-blueviolet?style=for-the-badge)
+![Vibe Check](https://img.shields.io/badge/Vibe%20Check-PASSED%20💯-ff69b4?style=for-the-badge)<br>
+![Aesthetic](https://img.shields.io/badge/Aesthetic-100%25%20Pure%20Glam%20🥰-purple?style=for-the-badge)<br>
+![Tech](https://img.shields.io/badge/Frame--Scrubbing-Canvas%20Magic%20🪄-black?style=for-the-badge)<br>
+![Status](https://img.shields.io/badge/Status-Serving%20Looks%20🪞-blueviolet?style=for-the-badge)<br>
 
 ---
 
