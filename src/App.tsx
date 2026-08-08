@@ -536,7 +536,7 @@ export default function App() {
         )}
       </div>
 
-      {/* SECTION 2: Proudly Trusted by Leading Brands Section */}
+      {/* SECTION 2: Proudly Partnered by Premier Airline Partners Section */}
       <section className="w-full max-w-[1440px] text-white relative overflow-hidden flex flex-col justify-between py-16 sm:py-24 px-4 sm:px-8">
         {/* Soft Background Warm Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-amber-700/15 via-red-900/15 to-orange-800/10 rounded-full blur-[120px] pointer-events-none" />
@@ -546,86 +546,104 @@ export default function App() {
           <Reveal direction="up" delay={100}>
             {/* Main Headline with exact mixed typography */}
             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.15] text-white tracking-tight">
-              <span className="font-['Playfair_Display',serif] italic block sm:inline">Proudly Trusted </span>
-              <span className="font-['Playfair_Display',serif] italic">by </span>
-              <span className="font-['DM_Sans',sans-serif]">Leading Brands </span>
+              <span className="font-['Playfair_Display',serif] italic block sm:inline">Proudly Partnered </span>
+              <span className="font-['Playfair_Display',serif] italic">with </span>
+              <span className="font-['DM_Sans',sans-serif]">Premier Airlines </span>
               <br className="hidden sm:block" />
               <span className="font-['DM_Sans',sans-serif]">Across </span>
-              <span className="font-['Playfair_Display',serif] italic">Industries</span>
+              <span className="font-['Playfair_Display',serif] italic">the Globe</span>
               <sup className="text-[#ff3b30] font-sans text-xl sm:text-3xl font-semibold ml-0.5 select-none inline-block -translate-y-2">®</sup>
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={250}>
             {/* Subtext with mixed typography */}
-            <p className="mt-8 text-base sm:text-lg md:text-xl text-white/90 max-w-lg mx-auto leading-relaxed text-center font-normal">
-              <span className="font-['Playfair_Display',serif] italic text-white/95">We've partnered with leading </span>
-              <span className="font-['DM_Sans',sans-serif]">brands to deliver innovative and impactful architectural solutions</span>
+            <p className="mt-8 text-base sm:text-lg md:text-xl text-white/90 max-w-xl mx-auto leading-relaxed text-center font-normal">
+              <span className="font-['Playfair_Display',serif] italic text-white/95">We've partnered with world-class </span>
+              <span className="font-['DM_Sans',sans-serif]">airline partners to deliver seamless, luxury flight experiences and effortless journeys to Paris</span>
             </p>
           </Reveal>
         </div>
 
-        {/* Bottom Brand Logos Bar */}
+        {/* Bottom Airline Partner Logos Bar */}
         <div className="relative z-10 w-full pt-8 border-t border-white/15">
-          <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-8 sm:gap-12 opacity-80 hover:opacity-100 transition-opacity">
+          <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-8 sm:gap-10 opacity-85 hover:opacity-100 transition-opacity">
             
-            {/* Logo 1: Apex Architecture */}
+            {/* Airline 1: Air France */}
             <Reveal direction="up" delay={150}>
-              <div className="flex items-center gap-2 text-white hover:scale-105 transition-transform duration-300">
-                <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/>
+              <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
+                <svg className="w-6 h-6 text-red-500 fill-current" viewBox="0 0 24 24">
+                  <path d="M2.5 19.5L21.5 4.5H16L2 16.5v3zM5 19.5h16.5L9.5 10 5 19.5z"/>
                 </svg>
                 <div className="flex flex-col text-left">
-                  <span className="text-xs font-bold tracking-widest uppercase font-['DM_Sans',sans-serif]">Apex</span>
-                  <span className="text-[9px] tracking-wider uppercase opacity-70">Architecture</span>
+                  <span className="text-xs font-black tracking-[0.2em] uppercase font-['DM_Sans',sans-serif]">AIR FRANCE</span>
+                  <span className="text-[8px] tracking-widest uppercase opacity-70">OFFICIAL PARTNER</span>
                 </div>
               </div>
             </Reveal>
 
-            {/* Logo 2: Condon Construction */}
+            {/* Airline 2: Emirates */}
             <Reveal direction="up" delay={250}>
               <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
-                <div className="w-7 h-7 border-2 border-white rounded-md flex items-center justify-center font-extrabold text-xs">
-                  C
+                <div className="w-7 h-7 bg-red-600 rounded flex items-center justify-center font-serif text-white font-extrabold text-xs tracking-tighter shadow-sm">
+                  EK
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-xs font-extrabold tracking-wider uppercase font-['DM_Sans',sans-serif]">CONDON</span>
-                  <span className="text-[8px] tracking-widest uppercase opacity-75">CONSTRUCTION</span>
+                  <span className="text-xs font-extrabold tracking-widest uppercase font-['DM_Sans',sans-serif]">Emirates</span>
+                  <span className="text-[8px] tracking-widest uppercase opacity-75">FLY BETTER</span>
                 </div>
               </div>
             </Reveal>
 
-            {/* Logo 3: Morrison Construction */}
+            {/* Airline 3: Qatar Airways */}
             <Reveal direction="up" delay={350}>
-              <div className="flex items-center gap-2 text-white hover:scale-105 transition-transform duration-300">
-                <span className="text-sm font-semibold tracking-tight font-['DM_Sans',sans-serif]">Morrison</span>
-                <span className="text-xs font-light opacity-90">Construction</span>
-                <div className="w-2.5 h-2.5 rounded-full bg-red-600 ml-0.5" />
-              </div>
-            </Reveal>
-
-            {/* Logo 4: Creative Architecture */}
-            <Reveal direction="up" delay={450}>
-              <div className="flex items-center gap-2 text-white hover:scale-105 transition-transform duration-300">
-                <svg className="w-7 h-7 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24">
-                  <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 9h2M13 9h2M9 13h2M13 13h2" />
+              <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
+                <svg className="w-6 h-6 stroke-current fill-none stroke-[1.8] text-amber-300" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 14l4-5 4 5M12 9v6" />
                 </svg>
                 <div className="flex flex-col text-left">
-                  <span className="text-xs font-bold tracking-wider uppercase font-['DM_Sans',sans-serif]">Creative</span>
-                  <span className="text-[8px] tracking-widest uppercase opacity-70">Build Studio</span>
+                  <span className="text-xs font-bold tracking-widest uppercase font-['DM_Sans',sans-serif]">QATAR</span>
+                  <span className="text-[8px] tracking-widest uppercase opacity-75">AIRWAYS</span>
                 </div>
               </div>
             </Reveal>
 
-            {/* Logo 5: UrbanLine */}
-            <Reveal direction="up" delay={550}>
-              <div className="flex items-center gap-2 text-white hover:scale-105 transition-transform duration-300">
-                <svg className="w-7 h-7 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24">
-                  <path d="M2 22h20M6 22V4l6 4v14M12 8l6-3v17" />
+            {/* Airline 4: Singapore Airlines */}
+            <Reveal direction="up" delay={450}>
+              <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
+                <svg className="w-6 h-6 fill-current text-amber-400" viewBox="0 0 24 24">
+                  <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
                 </svg>
                 <div className="flex flex-col text-left">
-                  <span className="text-xs font-semibold tracking-widest uppercase font-['DM_Sans',sans-serif]">URBANLINE</span>
-                  <span className="text-[8px] tracking-wider uppercase opacity-70">STRUCTURAL</span>
+                  <span className="text-xs font-bold tracking-wider uppercase font-['DM_Sans',sans-serif]">SINGAPORE</span>
+                  <span className="text-[8px] tracking-widest uppercase opacity-70">AIRLINES</span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Airline 5: Delta Air Lines */}
+            <Reveal direction="up" delay={550}>
+              <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
+                <svg className="w-6 h-6 fill-current text-sky-400" viewBox="0 0 24 24">
+                  <path d="M12 2L1 21h22L12 2zm0 5l7 12H5l7-12z"/>
+                </svg>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs font-extrabold tracking-widest uppercase font-['DM_Sans',sans-serif]">DELTA</span>
+                  <span className="text-[8px] tracking-wider uppercase opacity-70">SKYTEAM ALLIANCE</span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Airline 6: British Airways */}
+            <Reveal direction="up" delay={650}>
+              <div className="flex items-center gap-2.5 text-white hover:scale-105 transition-transform duration-300">
+                <svg className="w-6 h-6 stroke-current fill-none stroke-[2] text-blue-400" viewBox="0 0 24 24">
+                  <path d="M4 16c6-4 10-4 16 0M4 12c6-4 10-4 16 0" />
+                </svg>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs font-bold tracking-wider uppercase font-['DM_Sans',sans-serif]">BRITISH AIRWAYS</span>
+                  <span className="text-[8px] tracking-widest uppercase opacity-70">CLUB WORLD</span>
                 </div>
               </div>
             </Reveal>
