@@ -1,6 +1,0 @@
-{
-  "name": "Sunrock Solar Banner",
-  "description": "Recreated Sunrock banner layout with plain black background, pure white text, and DM Sans typography.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
