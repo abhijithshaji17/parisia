@@ -13,17 +13,17 @@
 
 Imagine getting off the plane, feeling like the literal **main character**, and sipping espresso under the Eiffel Tower while your camera roll turns into a high-fashion Pinterest board. 
 
-**Parisia** is an ultra-sleek, immersive web experience built with **300-frame interactive canvas scrubbing** that lets you scroll through Paris in buttery smooth resolution.
+**Parisia** is an ultra-sleek, immersive web experience built with **300-frame interactive canvas scrubbing** that lets you scroll into Paris in buttery smooth resolution.
 
 
 ---
 
 ## We’re built different :)
 
-* **✨ Buttery Smooth Scroll Scrubbing**: 300 cinematic frames powered by HTML5 Canvas & custom lerp interpolation. It's giving *Apple product reveal* vibes.
+* **✨ Buttery Smooth Scroll Scrubbing**: 300 cinematic frames powered by HTML5 Canvas & custom lerp interpolation, giving real *Apple product reveal* vibes.
 * **✈️ Preloader Flight Sequence**: Instant loader progress bar so you never get cooked waiting for images.
 * **🇫🇷 Parisian Aesthetic**: Clean typography with Google’s `Outfit` font, deep dark mode, and zero clutter.
-* **📱 Responsive AF**: Looks iconic whether you're scrolling on an iPhone 16 Pro Max or a 4K ultrawide monitor.
+* **📱 Responsive UI**: Looks iconic whatever you're scrolling on .
 * **⚡ Zero Bloat**: Vanilla JS + Pure CSS + HTML5 Canvas. Fast load times, zero unnecessary node module paralysis.
 
 ---
