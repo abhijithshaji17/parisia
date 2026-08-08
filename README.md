@@ -1,6 +1,6 @@
-# 🗼 PARISIA — *Let's plan your next escape ✨*
-
-> **"It’s giving main character energy in Paris, no cap."** 
+# 🗼 𝑷𝑨𝑹𝑰𝑺𝑰𝑨 - 𝑻𝑹𝑨𝑽𝑬𝑳 𝑩𝑬𝒀𝑶𝑵𝑫 𝑶𝑹𝑫𝑰𝑵𝑨𝑹𝒀 
+![alt text](logo.png)
+> **"𝐿𝑒𝑡'𝑠 𝑝𝑙𝑎𝑛 𝑦𝑜𝑢𝑟 𝑛𝑒𝑥𝑡 𝑒𝑠𝑐𝑎𝑝𝑒 ✨"** 
 
 ![Vibe Check](https://img.shields.io/badge/Vibe%20Check-PASSED%20💯-ff69b4?style=for-the-badge)<br>
 ![Aesthetic](https://img.shields.io/badge/Aesthetic-100%25%20Pure%20Glam%20🥰-purple?style=for-the-badge)<br>
@@ -47,6 +47,6 @@ Got ideas? Found a bug? Want to drop some aesthetic feedback?
 ---
 
 <p align="center">
-Made with 💖, espresso ☕, and pure Gen-Z energy🔥. <br>
-<i>🗼Parisia — Ville lumière ✨</i>
+𝑀𝑎𝑑𝑒 𝑤𝑖𝑡ℎ 💖, 𝑒𝑠𝑝𝑟𝑒𝑠𝑠𝑜 ☕, 𝑎𝑛𝑑 𝑝𝑢𝑟𝑒 𝐺𝑒𝑛-𝑍 𝑒𝑛𝑒𝑟𝑔𝑦🔥. <br>
+<b>©️ 𝑃𝑎𝑟𝑖𝑠𝑖𝑎 — 𝑉𝑖𝑙𝑙𝑒 𝑙𝑢𝑚𝑖𝑒𝑟𝑒</b>
 </p>
